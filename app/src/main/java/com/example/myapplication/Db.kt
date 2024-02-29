@@ -27,4 +27,10 @@ class Db (val context:Context,val factory:SQLiteDatabase.CursorFactory?):
         db.insert("users",null,values)
         db.close()
     }
+    fun getuser(login:String,password:String):Boolean
+    {
+        val db=this.readableDatabase
+        val result=db.rawQuery("SELECT * FROM user WHERE login='$login' and password='$password'",null)
+        return result.moveToFirst()
+    }
 }
