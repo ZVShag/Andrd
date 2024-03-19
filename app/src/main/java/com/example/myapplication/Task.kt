@@ -1,4 +1,4 @@
 package com.example.myapplication
 
-class Task(owner:String,title:String,dl:String) {
+class Task(val id:Int,val owner:String,val title:String,val dl:String) {
 }
